@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Deslizante</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        .slider-container {
+            width: 50%;
+            margin: 50px auto;
+        }
+
+        .slider {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <input type="range" min="0" max="3000" value="50" class="slider" id="mySlider">
+        <p>Valor: <span id="sliderValue"></span></p>
+    </div>
+
+    <script>
+
+        const slider = document.getElementById("mySlider");
+        const output = document.getElementById("sliderValue");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
+
+    </script>
+</body>
+
+</html>
