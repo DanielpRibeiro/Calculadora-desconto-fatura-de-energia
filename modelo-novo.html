@@ -10,108 +10,104 @@
 </head>
 
 <body>
-    <div class="slider-container">
-        <p class="titulo-cal">Qual valor <span>Mensal</span> da sua conta de energia?</p>
-        <p style="color: #17BB80; font-size: 35px; font-weight: 700;">R$ <span id="sliderValue"></span></p>
+  <div class="slider-container">
+        <p class="titulo-cal">Simule agora seu desconto, <strong>de acordo com o gasto em sua fatura mensal</strong></p>
+        <p class="dn" style="color:#f56430; font-size: 35px; font-weight: 700;">R$ <span id="sliderValue"></span></p>
 
-        <input type="range" min="0" max="4000" value="300" class="slider" id="mySlider">
+        <input type="range" min="7999" max="300000" value="8000" class="slider" id="mySlider">
         <div class="descontos">
-            <div class="md-6">
-                <p>Sua fatura Mensal<strong> com economia ePOP será</strong></p>
-                <p style="color: #17BB80; font-size: 35px; font-weight: 700;" id="valorComDesconto">R$ 0.00</p>
+            <div class="md-6" style=" padding: 0px;">
+                <p class="dn">Sua <strong>fatura Mensal<br></strong> será aproximadamente</p>
+                <p class="dn" style="color:#f56430; font-size: 25px; font-weight: 700;" id="valorComDesconto">R$ 0.00</p>
             </div>
-            <div class="md-6">
-                <p>Com a ePOP, você vai ter uma <strong> Economia Anual</strong> de:</p>
-                <p style="color: #17BB80; font-size: 35px; font-weight: 700;" id="valorComDescontoAnual">R$0.00</p>
+            <div class="md-6" style="padding: 0px 7px 0px 0px;">
+                <p class="dn">Sua<strong> Economia Anual</strong> será aproximadamente </p>
+                <p class="dn" style="color:#f56430; font-size: 25px; font-weight: 700;" id="valorComDescontoAnual">R$0.00</p>
             </div>
         </div>
-        <p class="obs">Atenção: Taxas de desconto podem variar conforme sua região</p>
-
-
+        <p class="obs"></p>
     </div>
-
-    <!-- Descontos -->
-
 
 
     <style>
         @media (max-width:425px) {
-            .md-6{
-                /* display: block !important; */
+            .md-6 {
                 width: 90% !important;
                 padding: 0px;
-                /* border: 2px solid rgb(95, 47, 255) !important; */
             }
-            
+
         }
 
-        @media (max-width:550px){
+        @media (max-width:550px) {
 
-            .titulo-cal{
-            font-size: 25px !important;
-            font-weight: 900;
-        }
+            .titulo-cal {
+                font-size: 20px !important;
+                font-weight: 600;
+            }
 
-            .obs{
+            .obs {
                 font-size: 12px !important;
             }
 
-            .slider-container{
+            .slider-container {
+                padding-top: 0px !important;
                 width: 98%;
-                /* border: 5px solid rgb(255, 0, 187) !important; */
                 text-align: center !important;
                 align-items: center !important;
                 justify-content: center !important;
             }
 
-            .slider{
+            .slider {
                 width: 97% !important;
-                /* border: 2px solid rgb(17, 255, 0) !important; */
 
             }
-            .descontos{
-                /* border: 3px solid rgb(255, 115, 0) !important; */
+
+            .descontos {
                 width: 93% !important;
-                padding: 0px !important;
-                display:block !important;
+                padding-left: 30px !important;
+                display: block !important;
                 text-align: center !important;
                 align-items: center !important;
                 justify-content: center !important;
             }
-            .md-6{
-                /* display: block !important; */
+
+            .md-6 {
                 width: 94% !important;
                 padding: 0px;
-                /* border: 2px solid greenyellow !important; */
             }
         }
 
-        .titulo-cal{
-            font-size: 35px;
-            font-weight: 900;
+        .titulo-cal {
+            font-size: 25px;
+            /* font-weight: 900; */
+            text-align: center;
+
+            color: white;
         }
 
-        .obs{
+        .obs {
             font-size: 15px;
+
+            color: white;
         }
 
         .descontos {
             width: 98% !important;
             margin-top: 15px;
-            /* border: 1px solid red; */
             padding: 15px;
             display: flex;
+
+            color: white;
 
         }
 
         .md-6 {
-
+            color: white;
             width: 49%;
             padding: 10px;
-            /* border: solid 2px blue; */
         }
 
-        p {
+        .dn {
             text-align: center;
             font-size: 20px;
         }
@@ -119,92 +115,72 @@
         .slider-container {
             width: 100%;
             margin: 50px auto;
-            /* border: 2px solid red; */
         }
 
         .slider {
             -webkit-appearance: none;
-            /* Remove a aparência padrão do controle deslizante */
             width: 100%;
-            /* Define a largura do controle deslizante */
             height: 10px;
-            /* Define a altura do controle deslizante */
             background: #d3d3d3;
-            /* Define a cor de fundo do controle deslizante */
             outline: none;
-            /* Remove a borda padrão do controle deslizante */
             opacity: 0.7;
-            /* Define a opacidade do controle deslizante */
             -webkit-transition: .2s;
-            /* Adiciona uma transição suave */
             transition: opacity .2s;
             border-radius: 5px;
-            /* Adiciona bordas arredondadas */
         }
 
         .slider:hover {
             opacity: 1;
-            /* Aumenta a opacidade quando o mouse passa sobre o controle deslizante */
         }
 
-        /* Personalize a aparência do "polegar" (handle) do controle deslizante */
         .slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            /* Remove a aparência padrão */
             appearance: none;
             width: 35px;
-            /* Define a largura do polegar */
             height: 35px;
-            /* Define a altura do polegar */
-            background: #ffffff;
-            /* Define a cor de fundo do polegar */
+            background: #fc9976;
             cursor: pointer;
-            /* Adiciona um cursor personalizado */
             border-radius: 50%;
-            /* Torna o polegar redondo */
-            border: 3px solid #17BB80;
-            /* Adiciona uma borda ao redor do polegar */
+            border: 3px solid #f56430;
         }
 
-        /* Altere a cor do polegar quando o controle deslizante estiver ativo */
         .slider::-webkit-slider-thumb:hover {
-            /* background: #17BB80; */
-            border: 3px solid #bada55;
+            border: 3px solid #f56430;
 
 
-            /* Altera a cor de fundo ao passar o mouse sobre o polegar */
         }
     </style>
-
     <script>
         const slider = document.getElementById("mySlider");
         const output = document.getElementById("sliderValue");
         const valorComDesconto = document.getElementById("valorComDesconto");
         const valorComDescontoAnual = document.getElementById("valorComDescontoAnual");
 
-        // Função para calcular o desconto e atualizar o texto
+        function formatarMoeda(valor) {
+            return valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
         function calcularDesconto(valor) {
-            const desconto = valor * 0.18; // Calcula o desconto de 18%
-            const valorComDesconto = valor - desconto; // Calcula o valor com desconto
-            return valorComDesconto.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); // Retorna o valor com desconto formatado com duas casas decimais e separadores de milhares
+            const desconto = valor * 0.40;
+            const valorComDescontoAtual = valor - desconto; // Renomeie a variável para evitar conflito
+            return formatarMoeda(valorComDescontoAtual);
         }
 
-        // Função para calcular o desconto anual e atualizar o texto
         function calcularDescontoAnual(valor) {
-            const descontoMensal = valor * 0.18; // Calcula o desconto mensal de 18%
-            const valorComDescontoMensal = valor - descontoMensal; // Calcula o valor com desconto mensal
-            const descontoAnual = (valor - valorComDescontoMensal) * 12; // Calcula o desconto anual multiplicando o desconto mensal por 12 meses
-            return descontoAnual.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); // Retorna o desconto anual formatado como moeda brasileira
+            const descontoMensal = valor * 0.40;
+            const valorComDescontoMensal = valor - descontoMensal;
+            const descontoAnual = (valor - valorComDescontoMensal) * 12;
+            return formatarMoeda(descontoAnual);
         }
 
-        output.innerHTML = slider.value;
-        valorComDesconto.innerHTML = `R$ ${calcularDesconto(slider.value)}`;
-        valorComDescontoAnual.innerHTML = `R$ ${calcularDescontoAnual(slider.value)}`;
+        output.textContent = formatarMoeda(parseFloat(slider.value));
+        valorComDesconto.textContent = `R$ ${calcularDesconto(parseFloat(slider.value))}`;
+        valorComDescontoAnual.textContent = `R$ ${calcularDescontoAnual(parseFloat(slider.value))}`;
 
         slider.oninput = function () {
-            output.innerHTML = this.value;
-            valorComDesconto.innerHTML = `R$ ${calcularDesconto(this.value)}`;
-            valorComDescontoAnual.innerHTML = `R$ ${calcularDescontoAnual(this.value)}`;
+            output.textContent = formatarMoeda(parseFloat(this.value));
+            valorComDesconto.textContent = `R$ ${calcularDesconto(parseFloat(this.value))}`;
+            valorComDescontoAnual.textContent = `R$ ${calcularDescontoAnual(parseFloat(this.value))}`;
         }
     </script>
 </body>
